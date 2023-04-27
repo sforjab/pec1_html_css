@@ -94,14 +94,14 @@ footer img {
     width: 220px;
 }
 
-/* #footerInicio {
+#footerInicio {
     background: transparent;
     bottom: 0;
     color: black;
     font-weight: bold;
     position: fixed;
     width: 100%;
-} */
+}
 
 .container, .containerEstrecho {
     margin-right: auto;

@@ -90,6 +90,15 @@ footer img {
   width: 220px;
 }
 
+#footerInicio {
+  color: #000;
+  width: 100%;
+  background: none;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+}
+
 .container, .containerEstrecho {
   max-width: 480px;
   width: 100%;
