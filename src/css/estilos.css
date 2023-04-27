@@ -1,11 +1,9 @@
 /* Definimos variables para los colores de textos y fondos */
 :root {
-    --col-txt-menu: rgb(93, 95, 121);
-    --col-txt-fondo-negro: rgb(255, 255, 255);
-    --col-contr1: rgb(245, 157, 35);
-    --col-contr2: rgb(240, 93, 80);
-    --col-fondo-color-titulares: rgb(0,0,0); 
-    --col-fondo-gris: rgb(227, 228, 230);
+    --col-gray: rgb(93, 95, 121);
+    --col-white: rgb(255, 255, 255);
+    --col-orange: rgb(245, 157, 35);
+    --col-black: rgb(0,0,0); 
 }
 
 /* Diseño Mobile first */
@@ -15,6 +13,7 @@ html {
     color: var(--col-txt-menu);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    height: 100%;
 }
 
 *, *:before, *:after {
@@ -23,10 +22,13 @@ html {
 
 body {
     margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
-    color: rgb(93, 95, 121);
+    color: var(--col-gray);
     font-size: 0.8rem;
 }
 
@@ -43,12 +45,12 @@ h1::before {
 }
 
 h1 span {
-    color: rgb(245, 157, 35);
+    color: var(--col-orange);
     font-size: 2rem;
 }
 
 h2, h3 {
-    color: var(--col-fondo-color-titulares);
+    color: var(---col-black);
     font-weight: 800;
 }
 
@@ -64,12 +66,12 @@ h3 {
 }
 
 a {
-    color: rgb(245, 157, 35);
+    color: var(--col-orange);
     text-decoration: none;
 }
 
 a:hover {
-    color: rgb(93, 95, 121);
+    color: var(--col-gray);
 }
 
 ul {
@@ -83,9 +85,13 @@ header {
     padding-bottom: 1rem;
 }
 
+main {
+    flex: 1;
+}
+
 footer {
-    background-color: rgb(93,96,127);
-    color: var(--col-txt-fondo-negro);
+    background-color: var(--col-gray);
+    color: var(--col-white);
     margin-top: 4rem;
     padding: 2rem 0;
 }
@@ -94,16 +100,7 @@ footer img {
     width: 220px;
 }
 
-#footerInicio {
-    background: transparent;
-    bottom: 0;
-    color: black;
-    font-weight: bold;
-    position: fixed;
-    width: 100%;
-}
-
-.container, .containerEstrecho {
+.container {
     margin-right: auto;
     margin-left: auto;
     max-width: 480px;
@@ -119,11 +116,11 @@ header .container {
 
 /* Menú de navegación */
 nav a {
-    color: rgb(93, 95, 121);
+    color: var(--col-gray);
 }
 
 nav a:hover, nav a.menuActivo {
-    color: rgb(245, 157, 35);
+    color: var(--col-orange);
 }
 
 nav ul {
@@ -140,19 +137,6 @@ footer p {
     font-size: 0.8rem;
 }
 
-/* footer a {
-    color: rgb(255, 255, 255);
-} */
-
-/* footer a:hover {
-    color: rgb(245, 157, 35);
-} */
-
-#imgInicio {
-    background-image: url("../img/fondo1.png");
-    background-size: cover;
-}
-
 .textoCentrado {
     text-align: center;
 }
@@ -160,20 +144,6 @@ footer p {
 /* Artículo */
 article p {
     line-height: 1.2rem;
-}
-
-blockquote {
-    background-color: var(--col-fondo-gris);
-    color: var(--col-fondo-color-titulares);
-    font-size: 0.8rem;
-    line-height: 1.2rem;
-    margin: 0;
-    padding: 1.2rem 1.2rem;
-}
-
-blockquote p {
-    font-size: 0.6rem;
-    margin-bottom: 0;
 }
 
 figure {
@@ -195,23 +165,41 @@ iframe {
     height: 200px;
 }
 
+/* Inicio */
+
+#imgInicio {
+    background-image: url("../img/fondo1.png");
+    background-size: cover;
+}
+
 #contenidoInicio {
     margin: 6rem 0;
     text-align: center;
 }
 
 #contenidoInicio h2 {
-    color: rgb(245,157,35);
+    color: var(--col-orange);
     text-shadow: 2px 2px black;
     font-size: 3rem;
 }
 
 #contenidoInicio h3 {
-    color: rgb(245,157,35);
+    color: var(--col-orange);
     font-size: 1rem;
     margin: 0;
     text-shadow: 1px 1px black;
 }
+
+/* Presentación */
+
+#canvasPoblacion {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 75%;
+}
+
+/* Lugares de interés */
 
 #listaLugares {
     display: grid;
@@ -235,6 +223,8 @@ iframe {
     width: 80%;
 }
 
+/* Páginas de detalle */
+
 #enlacesLugares {
     display: flex;
     flex-wrap: wrap;
@@ -251,27 +241,22 @@ iframe {
     margin-left: 0.4rem;
     margin-right: 0.4rem;
     content: "·";
-    color: var(--col-contr1);
+    color: var(--col-orange);
 }
 
 #enlacesLugares li:last-child::after {
     content: "";
 }
 
+/* Enlaces */
+
 #listaEnlaces ul {
     list-style-type: disclosure-closed;
     padding-left: 2rem;
 }
 
-#canvasPoblacion {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    width: 75%;
-}
-
 .enlaceActivo {
-    color: rgb(93, 95, 121);
+    color: var(--col-gray);
 }
 
 /* Diseño para tablets */
@@ -283,7 +268,7 @@ iframe {
 
     /* Elementos comunes */
     h1 {
-        color: rgb(93, 95, 121);
+        color: var(--col-gray);
         font-size: 1.3rem;
     }
     
@@ -300,7 +285,7 @@ iframe {
     }
     
     h1 span {
-        color: rgb(245, 157, 35);
+        color: var(--col-orange);
         font-size: 3.5rem;
     }
 
@@ -322,6 +307,8 @@ iframe {
         height: 315px;
     }
 
+    /* Lugares de interés */
+
     #listaLugares li a {
         font-size: 1rem;
     }
@@ -332,27 +319,6 @@ iframe {
     /* Contenedor principal */
     .container {
       max-width: 1140px;
-    }
-
-    /* Contenedor principal para páginas con contenido estrecho */
-    .containerEstrecho {
-        max-width: 1140px;
-        margin-top: 4rem; 
-        width: 60%;
-    }
-
-    /* #contenidoInicio {
-        color: white;
-        left: 19.5%;
-        top: 25%;
-    } */
-
-    #contenidoInicio h2 {
-        font-size: 5rem;
-    }
-
-    #contenidoInicio h3 {
-        font-size: 1.4rem;
     }
 
     /* Contenido header */
@@ -371,26 +337,23 @@ iframe {
         margin-left: 1.5rem;
     }
 
-    /* 11 de febrero */
-    blockquote {
-        font-size: 0.95rem;
-        line-height: 1.5rem;
-        margin: 2.5rem;
-    }
-
     iframe {
         width: 70%;
     }
 
+    /* Inicio */
+
+    #contenidoInicio h2 {
+        font-size: 5rem;
+    }
+
+    #contenidoInicio h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Lugares de interés */
+
     #listaLugares li a {
         font-size: 1.3rem;
     }
-
-    /*figure {
-        width: 44%;
-    }*/
-
-    /*iframe {
-        height: 217px;
-    }*/
 }
