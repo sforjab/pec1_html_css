@@ -263,6 +263,13 @@ iframe {
     padding-left: 2rem;
 }
 
+#canvasPoblacion {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 75%;
+}
+
 .enlaceActivo {
     color: rgb(93, 95, 121);
 }
